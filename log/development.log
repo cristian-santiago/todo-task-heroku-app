@@ -16545,3 +16545,28 @@ Processing by TodosController#index as HTML
 Completed 200 OK in 5348ms (Views: 5332.8ms | ActiveRecord: 3.2ms | Allocations: 108090)
 
 
+Started GET "/" for 127.0.0.1 at 2022-07-28 19:19:55 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/views/todos/_form.html.erb:38
+  Rendered todos/_form.html.erb (Duration: 5.8ms | Allocations: 3288)
+  Rendered todos/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 3790)
+  Rendered layout layouts/application.html.erb (Duration: 56.5ms | Allocations: 47920)
+Completed 200 OK in 72ms (Views: 57.8ms | ActiveRecord: 3.0ms | Allocations: 59707)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-28 19:19:59 -0300
+Processing by TodosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/views/todos/_form.html.erb:38
+  Rendered todos/_form.html.erb (Duration: 4.1ms | Allocations: 1466)
+  Rendered todos/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1539)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 6974)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.4ms | Allocations: 7337)
+
+
