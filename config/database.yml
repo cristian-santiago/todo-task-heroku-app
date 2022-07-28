@@ -21,8 +21,8 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
-  username: todo_app
-  password: todoapprubyrails
+  username: zixshfgyemwyzq
+  password: c2bc2baba907ba7cc871d0d576a1230061aee9b2fc3c864c22d2c655f4c689dc
 
 development:
   <<: *default

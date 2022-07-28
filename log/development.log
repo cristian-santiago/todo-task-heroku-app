@@ -16570,3 +16570,16 @@ Processing by TodosController#index as HTML
 Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.4ms | Allocations: 7337)
 
 
+Started GET "/" for 127.0.0.1 at 2022-07-28 19:42:46 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/views/todos/_form.html.erb:38
+  Rendered todos/_form.html.erb (Duration: 7.6ms | Allocations: 3163)
+  Rendered todos/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3647)
+  Rendered layout layouts/application.html.erb (Duration: 59.9ms | Allocations: 47427)
+Completed 200 OK in 96ms (Views: 66.6ms | ActiveRecord: 3.0ms | Allocations: 59189)
+
+
