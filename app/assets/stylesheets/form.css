@@ -1,0 +1,100 @@
+html{
+    overflow-y: scroll;
+}
+
+th, td{
+    vertical-align: middle;
+         
+}
+
+
+body::before{
+    content: '';
+    
+    background-image: linear-gradient(rgba(238, 238, 238, 0.3),rgba(218, 218, 218, 0.4)), image-url('todo_img1.jpg');
+    position: fixed;
+    background-size: cover;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    
+
+    background-repeat: no-repeat;
+    background-position: center;
+
+    
+}
+
+.vertical-middle-txt{
+
+    text-decoration: none;
+    vertical-align: middle;
+        
+    }
+
+.separator{
+    width:30%;
+}
+
+.link:active{
+    color: white;
+}
+.link:hover{
+    color: white;
+}
+
+.link:visited{
+    color: white;
+   
+
+}
+.link{
+    text-decoration: none;
+    color: white;
+}
+.todo-link{
+    text-decoration: none;
+    color: rgba(20, 19, 19, 0.767);
+}
+.todo-link:hover{
+    
+    color: black;
+}
+
+
+.break-line{
+    word-wrap: break-word;
+    width: 500px;
+    display: inline-block;    
+    
+}
+
+.margin-p{
+    margin-top: 11px;
+}
+
+.button-back{
+    margin-left: 1em;
+}
+
+.form-decoration{
+    
+    background-color: white !important;
+    
+    
+    
+}
+
+.transparent{
+    
+    background-color: rgba(238, 238, 238, 0.8);
+    
+}
+
+header{
+    
+    text-align: center;
+    position: relative;
+    
+
+}

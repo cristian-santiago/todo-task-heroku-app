@@ -1,0 +1,29 @@
+<section class="vh-150 py-5">
+  <div class="container py-5 h-100" id="container">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-9">
+        <div class="card rounded-3 transparent">
+          <div class="card-body p-4">
+            <h1 class="text-center my-3 pb-3">Editing Task</h1>
+              <%= form_with model: @task do |form| %>
+                <div>
+                  <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2">
+                    <div class="col-12">                        
+                      <div class="form-outline">                                                      
+                        <p><%= form.text_field :title, maxlength: 200, required: true, placeholder:"Edit Task", class: "form-control"%></p>                                                      
+                      </div>
+                    </div>
+                    <div >
+                      <%= button_to "Update", @task, method: :edit , class: "btn btn-success " %>
+                      <%= link_to "Return",todo_path(@task.todo_id), required: false, class: "link btn btn-secondary button-back" %>
+                      <p style="color: green"><%= notice %></p>         
+                    </div>                    
+                  </form>  
+                </div>
+              <% end %>   
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,61 @@
+<section class="vh-150  py-5 " >
+  <div class="container py-5 h-100 " >
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-9">
+        <div class="card rounded-3 transparent">
+          <div class="card-body p-4 ">
+            <h1 class="text-center my-3 pb-3">To Do App</h1>
+              <%= form_with(model: @todo) do |form| %>
+                <div>
+                  <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2">
+                    <div class="col-12">                        
+                      <div class="form-outline">                                                      
+                        <p><%= form.text_field :name, maxlength: 45, required: true, placeholder:"Create a main task here", class: "form-control "%></p>                                                      
+                      </div>
+                    </div>
+                    <div >
+                      <%= button_to "Create", @todo, method: :new, class: "btn btn-success " %> 
+                      <p style="color: green"><%= notice %></p>         
+                    </div>
+                    <div class="form-outline mb-4">                        
+                      <%= form_tag(@todos_paths, method: :get) do %>
+                        <p><%= text_field_tag(:search, params[:search], placeholder: "Search for a main task here.", class: "form-control") %></p>
+                        <%= submit_tag("Search",  class: "btn btn-primary")%>
+                      <%end%>
+                    </div>
+                  </form>  
+                </div>
+              <% end %>
+            <div class="table-responsive">                                  
+              <table class=" table mb-1 col col-lg-9">
+                <thead>
+                  <tr>                  
+                    <th scope="col">Todo item</th>                    
+                    
+                  </tr>
+                </thead>
+                <tbody>                  
+                    <% @todos.each do |todo| %>
+                      <tr>                        
+                        <th scope="row" class="col col-lg-9">
+                          <p class="margin-p" ><%= link_to todo.name, todo, class: "todo-link" %></p>
+                        </th>  
+                        <td >                                            
+                            <%= link_to "Edit", edit_todo_path(todo), class: "link btn btn-warning " %>
+                        <td >                       
+                        <td >                        
+                            <%= button_to "Delete", todo, method: :delete, class: "btn btn-danger" %> 
+                        </td>  
+
+                      </tr>
+                    <%end%>                
+                </tbody>
+              </table>
+             </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

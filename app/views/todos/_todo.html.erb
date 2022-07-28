@@ -1,0 +1,55 @@
+<section class="vh-150 py-5">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-9">
+        <div class="card rounded-3 transparent">
+          <div class="card-body p-4">
+            <h1 class="text-center my-3 pb-3"> <%= @todo.name %> </h1>
+              <%= form_for @task do |f| %>
+                <div>
+                  <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2">
+                    <div class="col-12">
+                      <div class="form-outline">
+                        <p><%= f.text_field :title, maxlength: 200, required: true, placeholder: "Create tasks here", class: "form-control" %></p>
+                          <%= f.hidden_field :todo_id, :value => @todo.id %>
+                      </div>
+                    </div>
+                    <div>
+                        <%= button_to "Create Task", @task, method: :new, class: "btn btn-success " %>                                
+                        <%= link_to "Back Todo", todos_path, class: "link btn btn-secondary button-back" %>                        
+                        <p style="color: green"><%= notice %></p>         
+                    </div>
+                  </form>  
+                </div>
+              <%end%>
+            <div class="table-responsive">  
+              <table class="table mb-1 col col-lg-9 ">
+                <thead>
+                  <tr>                    
+                    <th scope="col">Todo item</th>                  
+                    
+                  </tr>
+                </thead>             
+                <tbody>
+                  <% @tasks.each do |task| %> 
+                    <tr>
+                      <th scope = "row" class=" vertical-middle-txt col col-lg-9">
+                        <p class="margin-p break-line"><%= task.title %></p>
+                      </th>
+                      <td class="button-inline-middle" >                                            
+                          <%= link_to "Edit", edit_task_path(task), class: "link btn btn-warning" %>
+                      <td>                       
+                      <td class="button-inline-middle" >                        
+                          <%= button_to "Delete", task, method: :delete, class: "btn btn-danger" %> 
+                      </td>                 
+                    </tr>
+                  <% end %>                  
+                </tbody>
+              </table>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
